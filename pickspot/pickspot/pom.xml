@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<!-- this section specifies the model version and Maven parent configuration -->
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- this parent POM is the spring-boot-starter-parent, providing default settings for Spring Boot projects -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.1.0</version>
+		<relativePath />
+	</parent>
+
+	<!-- this specifies the projects group, artifact, and version and its the base configuration for your project -->
+	<groupId>dev.dt</groupId>
+	<artifactId>pick-a-spot</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<!-- propeties section defines configuration for Java version and other properties -->
+	<properties>
+		<java.version>17</java.version> <!-- it specifies that the project is using Java 17 -->
+	</properties>
+
+	<!-- this section lists the dependencies means libraries of project needs -->
+	<dependencies>
+		<!-- spring boot Web Starter- adds support for building web applications (RESTful APIs) with spring boot -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- jackson Databind- Provides functionality for serializing and deserializing java objects to and from JSON -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+		<!-- spring boot Test Starter- Includes dependencies for testing spring boot applications -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope> <!-- only used in the testing environment -->
+		</dependency>
+
+		<!-- JUnit 5 API- A framework for writing and running tests (JUnit version 5) -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.8.2</version>
+			<scope>test</scope> <!-- only used in the testing environment -->
+		</dependency>
+
+		<!-- JUnit Jupiter Engine- The engine that runs the JUnit 5 tests -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.8.2</version>
+			<scope>test</scope> <!-- only used in the testing environment -->
+		</dependency>
+
+		<!-- assertJ core- A library for fluent, expressive assertions in tests -->
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.22.0</version>
+			<scope>test</scope> <!-- only used in the testing environment -->
+		</dependency>
+
+		<!-- Spring Boot DevTools- Provides tools like automatic restarts and live reload during development -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope> <!-- used at runtime during development -->
+			<optional>true</optional> <!-- optional dependency for enhancing development workflow -->
+		</dependency>
+	</dependencies>
+
+	<!-- build section contains plugin configuration for building and running the application -->
+	<build>
+		<plugins>
+			<!-- Spring Boot Maven Plugin- A plugin for building and running Spring Boot applications via Maven -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
